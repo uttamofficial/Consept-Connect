@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "root": true,
+  "extends": [
+    "next/core-web-vitals", 
+    "prettier", 
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": ["tailwindcss"],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off", // Disables warnings for plain HTML links
+    "react/jsx-key": "off", // Disables missing key prop warnings
+    "tailwindcss/no-custom-classname": "off" // Disables warnings for non-Tailwind classnames
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": ["cn"], // Recognizes custom classnames
+      "config": "tailwind.config.js" // Points to the Tailwind config file
+    },
+    "next": {
+      "rootDir": ["./"] // Specifies the root directory
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"], 
+      "parser": "@typescript-eslint/parser", // Enables TypeScript parsing for TypeScript files
+      "extends": [
+        "plugin:@typescript-eslint/recommended", // Includes TypeScript-specific ESLint rules
+        "plugin:@typescript-eslint/recommended-requiring-type-checking" // Includes stricter type-checking rules
+      ],
+      "parserOptions": {
+        "project": "./tsconfig.json" // Points to the TypeScript configuration file
+      },
+      "rules": {
+        "@typescript-eslint/no-unused-vars": ["warn"], // Warns for unused variables
+        "@typescript-eslint/explicit-function-return-type": "off" // Disables forcing return types
+      }
+    }
+  ]
+}

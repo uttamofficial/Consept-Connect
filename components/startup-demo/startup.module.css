@@ -1,0 +1,51 @@
+.main {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    margin-bottom: 0vh;
+    overflow: hidden;
+}
+
+.main img {
+    object-fit: cover;
+    position: absolute;
+    top: 0; /* Reset top alignment */
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ensure full height coverage */
+    z-index: -1; /* Send to background */
+}
+
+.sliderContainer {
+    position: absolute;
+    bottom: 50px; /* Align slightly above the bottom */
+    width: 100%;
+    overflow: hidden; /* Prevent text overflow */
+}
+
+.slider {
+    display: flex; /* Align text horizontally */
+    white-space: nowrap; /* Prevent text wrapping */
+    will-change: transform; /* Optimize animation performance */
+}
+
+.slider p {
+    margin: 0;
+    font-size: clamp(30px, 8vw, 230px); /* Responsive font size */
+    font-weight: 500;
+    padding-right: 50px; /* Space between blocks */
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .sliderContainer {
+        bottom: 160px; /* Adjust positioning for smaller screens */
+    }
+    .main img{
+        object-fit: contain; /* Change image scaling */
+    }
+    .slider p {
+        font-size: clamp(20px, 6vw, 100px); /* Smaller font for mobile */
+        padding-right: 30px; /* Reduce spacing */
+    }
+}
