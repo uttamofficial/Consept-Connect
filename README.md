@@ -119,5 +119,5 @@ This project is open-source and available under the **MIT License**.
 💬 Have suggestions or found a bug? Feel free to open an issue or contribute!  
 
 📧 Contact: **uttamofficial005@gmail.com**  
-🔗 GitHub: [ConseptConnect](https://github.com/uttamofficial/ConseptConnect.git)  
+🔗 GitHub: [ConseptConnect](https://github.com/uttamofficial/Consept-Connect.git)  
 
